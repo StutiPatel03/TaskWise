@@ -3,7 +3,7 @@ import remarkGfm from 'remark-gfm'
 import { useState } from 'react'
 import { MessageCircle, Send, Bot, User, Sparkles, LoaderCircle } from 'lucide-react'
 
-const API_URL = 'http://localhost:5000'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000'
 
 const suggestedQuestions = [
   'Give me a summary of the student data',

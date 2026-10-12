@@ -33,7 +33,7 @@ function App() {
 
   // Clear any previous dataset when the app first loads.
   useEffect(() => {
-    fetch('http://localhost:5000/api/reset', {
+    fetch( `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/reset`, {
       method: 'POST',
       credentials: 'include',
     }).catch((error) => {
@@ -54,7 +54,7 @@ const handleFileUpload = async (event) => {
     const formData = new FormData()
     formData.append('file', file)
 
-    const response = await fetch('http://localhost:5000/api/analyze', {
+    const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/analyze`, {
       method: 'POST',
       body: formData,
       credentials: 'include',

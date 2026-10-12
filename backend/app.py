@@ -14,10 +14,20 @@ app.config["SECRET_KEY"] = (
     os.getenv("FLASK_SECRET_KEY") or secrets.token_hex(32)
 )
 
+frontend_url = os.getenv("FRONTEND_URL")
+
+allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+]
+
+if frontend_url:
+    allowed_origins.append(frontend_url.rstrip("/"))
+
 CORS(
     app,
     supports_credentials=True,
-    origins=["http://localhost:5173", "http://127.0.0.1:5173"]
+    origins=allowed_origins,
 )
 
 # Load environment variables from backend/.env
