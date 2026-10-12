@@ -173,6 +173,8 @@ export default function AIAssistant({ analysis }) {
             className="flex items-center gap-3"
           >
             <input
+              id="student-data-question"
+              name="student-data-question"
               value={question}
               onChange={(event) => setQuestion(event.target.value)}
               placeholder="Ask something about your student data..."
