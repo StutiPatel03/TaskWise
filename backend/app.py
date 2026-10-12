@@ -14,6 +14,9 @@ app.config["SECRET_KEY"] = (
     os.getenv("FLASK_SECRET_KEY") or secrets.token_hex(32)
 )
 
+app.config["SESSION_COOKIE_SAMESITE"] = "None"
+app.config["SESSION_COOKIE_SECURE"] = True
+
 frontend_url = os.getenv("FRONTEND_URL")
 
 allowed_origins = [
