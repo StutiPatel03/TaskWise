@@ -213,6 +213,10 @@ const handleFileUpload = async (event) => {
           {/* Overview page */}
           {activePage === 'Overview' && (
             <>
+              {/*
+              TEMPORARILY HIDDEN: Backend analysis response
+              Uncomment this block when debugging the backend.
+
               {analysis && (
                 <section className="rounded-2xl border border-slate-200 bg-white p-6">
                   <h3 className="font-semibold text-slate-900">
@@ -226,6 +230,7 @@ const handleFileUpload = async (event) => {
                   </pre>
                 </section>
               )}
+               */}
 
               <section className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
                 {[
